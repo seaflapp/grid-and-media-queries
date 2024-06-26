@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+body {
+    background-color: darksalmon;
+}
+
+.grid {
+    margin-top: 10%;
+    margin-inline: auto;
+    max-width: 80%;
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    grid-template-columns: repeat(4, minmax(50px, 1fr));
+    grid-template-rows: repeat(3, 200px);
+    /*! grid-template-rows: repeat(2, 200px); */
+    /* grid-auto-flow: dense; */
+    gap: 8px;
+    grid-template-areas: 
+    "two three four five"
+    "one one eight five"
+    "six six seven five"
+    ;
+    /* grid-template-areas: 
+    "two three four five"
+    "one eighht six seven"
+    ; */
+}
+
+.box {
+background-color: rgb(185, 25, 137);
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 1.5rem;
+border: solid 1px black;
+text-transform: uppercase;
+}
+
+.one {
+background-color: blueviolet;
+/* grid-column-start: 1; */
+/* grid-column-end: 3; */
+grid-area: one;
+}
+
+.two {
+background-color: brown;
+/* grid-column-start: 3; */
+/* grid-column-end: 4; */
+grid-area: two;
+}
+
+.three {
+background-color: rgb(37, 77, 77);
+/* grid-row: 1/3; */
+/* grid-column: 4; */
+grid-area: three;
+}
+
+.four {
+background-color: aqua;
+grid-area: four;
+/* grid-column: 2/4; */
+}
+
+.five {
+background-color: blue;
+grid-area: five;    
+/* grid-column: 2/4; */
+/* grid-row: 2/3; */
+}
+
+.six {
+background-color: chocolate;
+grid-area: six;  
+/* grid-column: span 2; */
+}
+
+.seven {
+background-color: chartreuse;
+grid-area: seven;
+/* grid-column: 4; */
+}
+
+.eight {
+    /* grid-row: 3; */
+    /* grid-column: 1; */
+    grid-area: eigth;
+}
+
+
+
+@media (max-width: 600px) {
+    body {
+        background-color: rgb(102, 218, 118);
+    }
+    .grid {
+        max-width: 95%;
+        grid-template-columns: repeat(3, minmax(50px, 1fr));
+        grid-template-rows: repeat(4, 200px);
+        grid-template-areas: 
+        "eight eight five"
+        "seven two four"
+        "one six six"
+        "three three three"
+        ;
+    }
+}
